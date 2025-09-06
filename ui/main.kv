@@ -1,0 +1,30 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.2
+            padding: 10
+            spacing: 10
+
+            Button:
+                text: 'Home'
+                on_press: root.manager.current = 'main'
+
+            Button:
+                text: 'Scan'
+                on_press: root.manager.current = 'scan_menu'
+
+            Button:
+                text: "Network"
+                on_release: app.root.current = "network_menu"
+
+            Button:
+                text: "Settings"
+                on_release:
+                    app.root.current = "settings"
+
+        Label:
+            text: "Welcome - Protection Active"
+            color: 0, 1, 0, 1

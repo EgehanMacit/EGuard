@@ -1,0 +1,56 @@
+<NetworkMenuScreen>:
+    name: "network_menu"
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 20
+
+        Label:
+            text: "Network Modules"
+            font_size: '28sp'
+            size_hint_y: None
+            height: 60
+            bold: True
+            color: 1, 1, 1, 1
+
+        Button:
+            text: "TCP/IP Port Scanner"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "port_scanner"
+
+        Button:
+            text: "Monitor Network Connections"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "traffic_monitor"
+
+        Button:
+            text: "External IP Lookup"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "ip_lookup"
+
+        Button:
+            text: "Whois & Country Info"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "ip_whois"
+
+        Button:
+            text: "IP Blacklist Analysis"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "blacklist"
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "main"

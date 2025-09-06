@@ -1,0 +1,38 @@
+<BlacklistScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "IP Blacklist Analysis"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: ip_input
+            hint_text: "Enter IP address"
+            multiline: False
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: "Check"
+            size_hint_y: None
+            height: 40
+            on_release: root.sorgula()
+
+        ScrollView:
+            Label:
+                text: root.sonuc_text
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: 40
+            on_release:
+                app.root.current = "network_menu"

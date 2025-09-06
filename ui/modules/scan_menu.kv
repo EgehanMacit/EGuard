@@ -1,0 +1,38 @@
+<ScanMenuScreen>:
+<ScanMenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+
+        Label:
+            text: "Scan Modules"
+            font_size: '24sp'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "✅ Real-time Virus Scan (Signature-based)"
+            on_press: root.manager.current = "scan_pc"
+
+        Button:
+            text: "✅ Behavioral Analysis (Runtime Monitoring)"
+            on_press: root.manager.current = "behavior_analysis"
+
+        Button:
+            text: "✅ Sandbox Environment Simulation"
+            on_press: root.manager.current = "sandbox_analysis"
+
+        Button:
+            text: "File Scanner (Folder/File)"
+            on_press: root.manager.current = "file_scanner"
+
+        Button:
+            text: "✅ Quarantine & Security Report"
+            on_press: root.manager.current = "quarantine_report"
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.manager.current = "main"

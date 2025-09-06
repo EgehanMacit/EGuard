@@ -1,0 +1,20 @@
+<BehaviorAnalysisScreen>:
+    name: "behavior_analysis"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        ScrollView:
+            do_scroll_x: False
+            BoxLayout:
+                id: log_box
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+
+        Button:
+            text: "Geri Dön"
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.manager.current = "scan_menu"

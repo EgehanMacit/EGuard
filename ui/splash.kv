@@ -1,0 +1,32 @@
+<SplashScreen>:
+    FloatLayout:
+
+        Image:
+            source: "assets/splash/splash.png"
+            allow_stretch: True
+            keep_ratio: False    # Aspect ratio not preserved, fills full screen
+            size: self.parent.size
+            pos: self.parent.pos
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 1, None
+            height: "120dp"
+            pos_hint: {"center_x": 0.5, "y": 0.05}
+            padding: 10
+            spacing: 5
+
+            Label:
+                text: "EGuard"
+                font_size: "32sp"
+                bold: True
+                color: 1, 1, 1, 1  # White text (if image is dark)
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            Label:
+                text: "Loading..."
+                font_size: "20sp"
+                color: 1, 1, 1, 1
+                size_hint_y: None
+                height: self.texture_size[1]

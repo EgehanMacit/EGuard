@@ -1,0 +1,29 @@
+<FileScannerScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+
+        Label:
+            text: "File Scanner"
+            font_size: '24sp'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Select File and Scan"
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.open_file_chooser()
+
+        Label:
+            id: result_label
+            text: "Scan result will be displayed here"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.manager.current = "scan_menu"

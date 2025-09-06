@@ -1,0 +1,37 @@
+#:import Label kivy.uix.label.Label
+#:import Button kivy.uix.button.Button
+
+<PrimaryButton@Button>:
+    background_color: 1, 0.44, 0, 1  # Turuncu
+    color: 1, 1, 1, 1
+    font_size: '16sp'
+    size_hint_y: None
+    height: '40dp'
+    background_normal: ''
+    background_down: ''
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
+
+<NavButton@Button>:
+    background_color: 0.1, 0.1, 0.1, 1
+    color: 1, 1, 1, 1
+    font_size: '14sp'
+    size_hint_y: None
+    height: '40dp'
+    background_normal: ''
+    background_down: ''
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<DarkLabel@Label>:
+    color: 1, 1, 1, 1
+    font_size: '18sp'

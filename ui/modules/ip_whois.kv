@@ -1,0 +1,37 @@
+<IPWhoisScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Whois and Country Information"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: ip_input
+            hint_text: "Enter IP address"
+            multiline: False
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: "Check"
+            size_hint_y: None
+            height: 40
+            on_release: root.query()  # Python metoduyla eşleşti
+
+        ScrollView:
+            Label:
+                text: root.result_text  # Python tarafında StringProperty oluşturuldu
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: 40
+            on_release: app.root.current = "network_menu"

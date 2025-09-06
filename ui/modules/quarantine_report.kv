@@ -1,0 +1,73 @@
+<QuarantineScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 15
+        spacing: 10
+
+        Label:
+            text: "Quarantine & Reports"
+            font_size: 24
+            size_hint_y: None
+            height: self.texture_size[1] + 20
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.4
+            spacing: 10
+
+            BoxLayout:
+                orientation: "vertical"
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                Label:
+                    text: "Files in Quarantine"
+                    size_hint_y: None
+                    height: 30
+
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: quarantine_list
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        spacing: 5
+
+            BoxLayout:
+                orientation: "vertical"
+                padding: 10
+                spacing: 10
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                Label:
+                    text: "Scan Reports"
+                    size_hint_y: None
+                    height: 30
+
+                ScrollView:
+                    do_scroll_x: False
+                    GridLayout:
+                        id: rapor_liste
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        spacing: 5
+
+        Button:
+            text: "Return to Main Menu"
+            size_hint_y: None
+            height: 50
+            on_press:
+                root.manager.current = "scan_menu"

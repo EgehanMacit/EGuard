@@ -1,0 +1,62 @@
+<PortScannerScreen>:
+    ip_input: ip_input
+    start_port_input: baslangic_port_input
+    end_port_input: bitis_port_input
+    result_list: sonuc_liste
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "TCP/IP Port Scanner"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: ip_input
+            hint_text: "IP address (e.g. 127.0.0.1)"
+            multiline: False
+            size_hint_y: None
+            height: 40
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            spacing: 10
+
+            TextInput:
+                id: baslangic_port_input
+                hint_text: "Start Port"
+                multiline: False
+                input_filter: "int"
+
+            TextInput:
+                id: bitis_port_input
+                hint_text: "End Port"
+                multiline: False
+                input_filter: "int"
+
+        Button:
+            text: "Start Scan"
+            size_hint_y: None
+            height: 40
+            on_release: root.start_scan()
+
+        # Return to Menu button:
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: 40
+            on_release:
+                app.root.current = "network_menu"  # Go back to Network menu
+
+        ScrollView:
+            Label:
+                id: sonuc_liste
+                text: ""
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None

@@ -1,0 +1,9 @@
+BoxLayout:
+    orientation: "vertical"
+    Label:
+        text: "Your VirusTotal API Key"
+    TextInput:
+        id: vt_api_input
+        text: root.vt_api_key or ""
+        multiline: False
+        on_text: root.save_vt_api_key(self.text)

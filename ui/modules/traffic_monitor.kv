@@ -1,0 +1,35 @@
+<TrafficMonitorScreen>:
+    connection_list: baglanti_listesi
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Monitor Network Connections"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        ScrollView:
+            Label:
+                id: baglanti_listesi
+                text: "Loading..."
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            spacing: 10
+
+            Button:
+                text: "Refresh"
+                on_release: root.guncelle()
+
+            Button:
+                text: "Return to Menu"
+                on_release:
+                    app.root.current = "network_menu"

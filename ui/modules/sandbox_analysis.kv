@@ -1,0 +1,24 @@
+<SandboxAnalysisScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        Label:
+            id: result_label
+            text: root.analysis_result
+            size_hint_y: 0.7
+            text_size: self.width, None
+            halign: 'left'
+            valign: 'top'
+
+        Button:
+            text: "Select File & Run Analysis"
+            size_hint_y: 0.15
+            on_press: root.select_file()
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: 0.15
+            on_press:
+                app.root.current = "scan_menu"

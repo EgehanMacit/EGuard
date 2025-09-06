@@ -1,0 +1,30 @@
+<IPLookupScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "External IP Detection"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        Label:
+            text: root.ip_address
+            font_size: 20
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: "Get IP"
+            size_hint_y: None
+            height: 40
+            on_release: root.fetch_ip()
+
+        Button:
+            text: "Return to Menu"
+            size_hint_y: None
+            height: 40
+            on_release:
+                app.root.current = "network_menu"
